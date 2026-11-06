@@ -24,18 +24,18 @@
 
 ## 安装
 
-只从 **GitHub Release** 下载安装。
+只从 GitHub Release 下载安装。
 
-**DSH Desktop / Web 的插件页**
+**DSH 桌面端 / 网页端的插件页**
 
-1. 左侧栏 → **Plugins**
-2. **Add plugin** → 填入下面的 Release 下载地址 → **Install**
+1. 左侧栏进入「插件」页
+2. 点「添加插件」，粘贴下面的 Release 下载地址，点「安装」
 
 ```
 https://github.com/4Dusk-4c/dsh-fairy-zzz-patched4c/releases/download/v1.0.0/dsh-fairy-zzz-patched4c-1.0.0.tgz
 ```
 
-安装前 Host 会先读一遍 spec，显示 name / version / description 供确认。
+安装前，宿主会先读取这个地址，显示包名、版本与描述供你确认。
 
 **命令行**
 
@@ -43,11 +43,11 @@ https://github.com/4Dusk-4c/dsh-fairy-zzz-patched4c/releases/download/v1.0.0/dsh
 dsh plugin --profile <profile> add https://github.com/4Dusk-4c/dsh-fairy-zzz-patched4c/releases/download/v1.0.0/dsh-fairy-zzz-patched4c-1.0.0.tgz
 ```
 
-装好后刷新页面即可看到上述效果；无需重启 Host。
+装好后刷新页面即可看到上述效果，无需重启宿主。
 
 ## 卸载
 
-Plugins 页 → 该插件 → Remove，或：
+在「插件」页选中该插件，点「移除」，或：
 
 ```
 dsh plugin --profile <profile> remove dsh-fairy-zzz-patched4c
@@ -58,10 +58,6 @@ dsh plugin --profile <profile> remove dsh-fairy-zzz-patched4c
 本补丁通过 `dsh-fairy-zzz` 渲染出的 DOM class 叠加样式（`.fz3-eye-halo`、`.fz3-boot`、`.fz3-skip`、`.fz3-bubble-head` 等），并监听 `.fz3-boot` 的出现来注入控制条。**皮肤本体若改动这些 class 或结构，补丁需要跟着适配**；此时表现为某一项修复不生效或控制条不出现，不会影响皮肤本体运行。
 
 开发验证于 DSH `0.2.1-rc.3`。未声明 `engines.dsh`，因此安装时不会被版本要求阻断；升级 DSH 大版本后建议实测一次。
-
-## 许可
-
-MIT，见 [LICENSE](./LICENSE)。
 
 ---
 
@@ -85,7 +81,5 @@ then in DSH open **Plugins** → **Add plugin**, paste that URL and press **Inst
 CLI: `dsh plugin --profile <profile> add <same URL>`.
 
 **Caveat:** the patch targets class names produced by `dsh-fairy-zzz` (`.fz3-eye-halo`, `.fz3-boot`, `.fz3-skip`, `.fz3-bubble-head`, …). If the skin changes that DOM, the patch needs a matching update; a mismatch only makes a fix stop applying.
-
-MIT licensed.
 
 **Author:** 四夕4c (4Dusk-4c) · [github.com/4Dusk-4c](https://github.com/4Dusk-4c)
